@@ -1,13 +1,14 @@
 import React, { memo } from "react";
-import { UserRole, ZellerCustomer } from "../../../types";
+import { ZellerCustomer } from "../../../types";
+import { getRoleLabel } from "../../../utils";
 
 interface CustomerCardProps {
   customer: ZellerCustomer;
 }
 
 const CustomerCard: React.FC<CustomerCardProps> = ({ customer }) => {
-  const initial: string = customer?.name.charAt(0).toUpperCase();
-  const role: string = customer.role === UserRole.ADMIN ? "Admin" : "Manager";
+  const initial: string = customer.name.charAt(0).toUpperCase();
+  const role: string = getRoleLabel(customer.role);
 
   return (
     <div className="flex items-center space-x-4" role="article" aria-label={`Customer: ${customer.name}`}>
@@ -21,7 +22,7 @@ const CustomerCard: React.FC<CustomerCardProps> = ({ customer }) => {
 
       {/* Name + Role */}
       <div className="flex flex-col">
-        <h3 className="text-gray-900 font-medium">{customer?.name}</h3>
+        <h3 className="text-gray-900 font-medium">{customer.name}</h3>
         <span className="text-sm text-gray-500">{role}</span>
       </div>
     </div>

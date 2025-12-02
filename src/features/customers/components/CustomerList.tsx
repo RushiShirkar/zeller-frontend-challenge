@@ -1,6 +1,7 @@
 import React, { memo, useMemo } from "react";
 import { UserRole, ZellerCustomer } from "../../../types";
 import CustomerCard from "./CustomerCard";
+import { getRoleLabel } from "../../../utils";
 
 interface CustomerListProps {
   customers: ZellerCustomer[];
@@ -22,7 +23,7 @@ const CustomerList: React.FC<CustomerListProps> = ({
   return (
     <section aria-labelledby="user-role-heading">
       <h2 id="user-role-heading" className="text-lg font-semibold text-gray-900 mb-5">
-        {selectedRole === UserRole.ADMIN ? "Admin" : "Manager"} Users
+        {getRoleLabel(selectedRole)} Users
       </h2>
       <ul className="flex flex-col gap-5">
         {filteredCustomers.map((customer: ZellerCustomer) => (
