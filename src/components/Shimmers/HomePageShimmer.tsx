@@ -1,6 +1,6 @@
 const HomePageShimmer = () => {
   return (
-    <div className="animate-pulse space-y-10">
+    <div className="animate-pulse space-y-10" aria-busy="true" aria-live="polite" aria-label="Loading content">
       {/* User Types */}
       <section className="space-y-4">
         <h2 className="text-lg font-semibold text-gray-900">User Types</h2>

@@ -6,11 +6,11 @@ const Layout: React.FC = () => {
   return (
     <PageTitleProvider>
       <div className="min-h-screen bg-gray-100">
-        <div className="mx-auto max-w-[400px] min-h-screen shadow-2xl bg-white">
+        <div className="mx-auto max-w-[400px] min-h-screen shadow-2xl bg-white flex flex-col">
           <Header />
-          <div className="p-5">
+          <main className="p-5 flex-1">
             <Outlet />
-          </div>
+          </main>
         </div>
       </div>
     </PageTitleProvider>

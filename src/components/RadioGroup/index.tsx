@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 interface RadioOption<T> {
   label: string;
   value: T;
@@ -5,19 +7,24 @@ interface RadioOption<T> {
 
 interface RadioGroupProps<T> {
   label?: string;
+  name?: string;
   value: T;
   onChange: (value: T) => void;
   options: RadioOption<T>[];
-  direction?: "horizontal" | "vertical"; // NEW
+  direction?: "horizontal" | "vertical";
 }
 
 function RadioGroup<T extends string | number>({
   label,
+  name,
   value,
   onChange,
   options,
   direction = "vertical",
 }: RadioGroupProps<T>) {
+  const uniqueId = useId();
+  const groupName = name || `radio-group-${uniqueId}`;
+
   return (
     <fieldset className="space-y-3">
       {label && (
@@ -32,25 +39,26 @@ function RadioGroup<T extends string | number>({
         }
       >
         {options.map((option) => {
-          const id = `radio-${String(option.value)}`;
+          const optionId = `${groupName}-${option.value}`;
 
           return (
-            <label
-              key={option.value}
-              htmlFor={id}
-              className="flex items-center space-x-3 cursor-pointer"
-            >
+            <div key={String(option.value)} className="flex items-center">
               <input
-                id={id}
+                id={optionId}
                 type="radio"
-                name={label}
+                name={groupName}
                 value={option.value}
                 checked={value === option.value}
                 onChange={() => onChange(option.value)}
-                className="h-5 w-5 cursor-pointer text-blue-600 border-gray-300 focus:ring-blue-500"
+                className="h-5 w-5 cursor-pointer text-blue-600 border-gray-300 focus:ring-blue-500 focus:ring-2"
               />
-              <span className="text-gray-700">{option.label}</span>
-            </label>
+              <label
+                htmlFor={optionId}
+                className="ml-3 block text-sm font-medium text-gray-700 cursor-pointer"
+              >
+                {option.label}
+              </label>
+            </div>
           );
         })}
       </div>

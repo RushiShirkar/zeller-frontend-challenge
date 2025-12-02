@@ -20,8 +20,9 @@ const ErrorState: React.FC<ErrorStateProps> = ({
         {onRetry && (
           <div className="mt-10 flex items-center justify-center">
             <button
+              type="button"
               onClick={onRetry}
-              className="rounded-md bg-red-500 px-4 py-2.5 text-sm font-medium text-white shadow hover:bg-red-600"
+              className="rounded-md bg-red-500 px-4 py-2.5 text-sm font-medium text-white shadow hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
             >
               Try Again
             </button>
