@@ -21,7 +21,7 @@ const CustomerList: React.FC<CustomerListProps> = ({
     }
 
     return (
-        <section aria-labelledby="user-role-heading">
+        <section aria-labelledby="user-role-heading" data-testid="customer-list-section">
             <h2 id="user-role-heading" className="text-lg font-semibold text-gray-900 mb-5">
                 {getRoleLabel(selectedRole)} Customers
             </h2>
