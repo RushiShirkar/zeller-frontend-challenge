@@ -38,7 +38,7 @@ function RadioGroup<T extends string | number>({
             : "flex flex-col space-y-3"
         }
       >
-        {options.map((option) => {
+        {options.map((option: RadioOption<T>) => {
           const optionId = `${groupName}-${option.value}`;
 
           return (
@@ -50,7 +50,7 @@ function RadioGroup<T extends string | number>({
                 value={option.value}
                 checked={value === option.value}
                 onChange={() => onChange(option.value)}
-                className="h-5 w-5 cursor-pointer text-blue-600 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                className="h-5 w-5 cursor-pointer text-blue-600 border-gray-300"
               />
               <label
                 htmlFor={optionId}

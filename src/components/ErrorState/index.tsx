@@ -1,5 +1,10 @@
 import React from "react";
-import { ErrorStateProps } from "../../types";
+
+interface ErrorStateProps {
+  title?: string;
+  message?: string;
+  onRetry?: () => void;
+}
 
 const ErrorState: React.FC<ErrorStateProps> = ({
   title = "Error fetching customers",

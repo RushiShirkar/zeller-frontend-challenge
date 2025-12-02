@@ -1,6 +1,12 @@
 import { useQuery } from "@apollo/client/react";
 import { ListZellerCustomers } from "../graphql/queries";
-import { ListZellerCustomersResponse, ZellerCustomer } from "../types";
+import { ZellerCustomer } from "../types";
+
+interface ListZellerCustomersResponse {
+    listZellerCustomers: {
+        items: ZellerCustomer[];
+    };
+}
 
 export const useCustomers = () => {
     const { data, loading, error, refetch } =

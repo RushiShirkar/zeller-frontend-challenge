@@ -1,5 +1,9 @@
 import { createContext, useContext, useState, ReactNode } from "react";
-import { PageTitleContextProps } from "../types";
+
+interface PageTitleContextProps {
+  title: string;
+  setTitle: (title: string) => void;
+}
 
 const PageTitleContext = createContext<PageTitleContextProps | undefined>(
   undefined

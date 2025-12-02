@@ -9,20 +9,3 @@ export interface ZellerCustomer {
   name: string;
   role: UserRole;
 }
-
-export interface ListZellerCustomersResponse {
-  listZellerCustomers: {
-    items: ZellerCustomer[];
-  };
-}
-
-export interface ErrorStateProps {
-  title?: string;
-  message?: string;
-  onRetry?: () => void;
-}
-
-export interface PageTitleContextProps {
-  title: string;
-  setTitle: (title: string) => void;
-}
