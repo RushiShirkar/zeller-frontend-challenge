@@ -42,7 +42,7 @@ const HomePage = () => {
   return (
     <>
       <RadioGroup
-        label="User Types"
+        label="Customer Types"
         value={selectedRole}
         onChange={handleRoleChange}
         options={RADIO_OPTIONS}

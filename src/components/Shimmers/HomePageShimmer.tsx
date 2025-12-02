@@ -1,7 +1,7 @@
 const HomePageShimmer = () => {
   return (
     <div className="animate-pulse space-y-10" aria-busy="true" aria-live="polite" aria-label="Loading content">
-      {/* User Types */}
+      {/* Customer Types */}
       <section className="space-y-3">
         <div className="h-4 w-40 bg-gray-200 rounded"></div>
 
@@ -22,7 +22,7 @@ const HomePageShimmer = () => {
 
       <div className="my-4 h-px w-full bg-gray-200" />
 
-      {/* Admin Users */}
+      {/* Admin Customers */}
       <section className="space-y-5">
         <div className="h-4 w-40 bg-gray-200 rounded"></div>
 
