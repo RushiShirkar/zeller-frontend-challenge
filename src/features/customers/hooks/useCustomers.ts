@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client/react";
-import { ListZellerCustomers } from "../graphql/queries";
-import { ZellerCustomer } from "../types";
+import { ListZellerCustomers } from "../../../graphql/queries";
+import { ZellerCustomer } from "../../../types";
 
 interface ListZellerCustomersResponse {
     listZellerCustomers: {

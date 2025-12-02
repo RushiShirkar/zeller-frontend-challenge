@@ -35,26 +35,32 @@ function RadioGroup<T extends string | number>({
         className={
           direction === "horizontal"
             ? "flex flex-row space-x-6"
-            : "flex flex-col space-y-3"
+            : "flex flex-col space-y-2"
         }
       >
-        {options.map((option: RadioOption<T>) => {
+        {options.map((option) => {
           const optionId = `${groupName}-${option.value}`;
+          const isSelected = value === option.value;
 
           return (
-            <div key={String(option.value)} className="flex items-center">
+            <div
+              key={String(option.value)}
+              className={`flex items-center p-4 rounded-lg cursor-pointer transition-colors ${isSelected ? "bg-blue-50" : "hover:bg-gray-50"
+                }`}
+            >
               <input
                 id={optionId}
                 type="radio"
                 name={groupName}
                 value={option.value}
-                checked={value === option.value}
+                checked={isSelected}
                 onChange={() => onChange(option.value)}
-                className="h-5 w-5 cursor-pointer text-blue-600 border-gray-300"
+                className="h-5 w-5 accent-blue-600 cursor-pointer border-gray-300"
               />
+
               <label
                 htmlFor={optionId}
-                className="ml-3 block text-sm font-medium text-gray-700 cursor-pointer"
+                className="ml-3 block text-sm font-medium text-gray-900 cursor-pointer w-full"
               >
                 {option.label}
               </label>

@@ -1,5 +1,5 @@
-import React, { useMemo } from "react";
-import { UserRole, ZellerCustomer } from "../../types";
+import React, { memo, useMemo } from "react";
+import { UserRole, ZellerCustomer } from "../../../types";
 import CustomerCard from "./CustomerCard";
 
 interface CustomerListProps {
@@ -35,4 +35,4 @@ const CustomerList: React.FC<CustomerListProps> = ({
   );
 };
 
-export default CustomerList;
+export default memo(CustomerList);

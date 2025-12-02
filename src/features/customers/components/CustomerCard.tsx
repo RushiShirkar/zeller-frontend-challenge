@@ -1,5 +1,5 @@
-import React from "react";
-import { UserRole, ZellerCustomer } from "../../types";
+import React, { memo } from "react";
+import { UserRole, ZellerCustomer } from "../../../types";
 
 interface CustomerCardProps {
   customer: ZellerCustomer;
@@ -16,7 +16,7 @@ const CustomerCard: React.FC<CustomerCardProps> = ({ customer }) => {
         className="h-12 w-12 rounded-md bg-blue-50 flex items-center justify-center"
         aria-hidden="true"
       >
-        <span className="text-blue-600 font-semibold text-lg">{initial}</span>
+        <span className="text-blue-500 text-lg">{initial}</span>
       </div>
 
       {/* Name + Role */}
@@ -28,4 +28,4 @@ const CustomerCard: React.FC<CustomerCardProps> = ({ customer }) => {
   );
 };
 
-export default CustomerCard;
+export default memo(CustomerCard);

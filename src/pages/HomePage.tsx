@@ -3,8 +3,8 @@ import HomePageShimmer from "../components/Shimmers/HomePageShimmer";
 import { usePageTitle } from "../context/PageTitleContext";
 import { useEffect, useState } from "react";
 import RadioGroup from "../components/RadioGroup";
-import CustomerList from "../features/customers/CustomerList";
-import { useCustomers } from "../hooks/useCustomers";
+import CustomerList from "../features/customers/components/CustomerList";
+import { useCustomers } from "../features/customers/hooks/useCustomers";
 import { UserRole } from "../types";
 
 const HomePage = () => {
@@ -13,7 +13,7 @@ const HomePage = () => {
   const { setTitle } = usePageTitle();
 
   useEffect(() => {
-    setTitle("Customers");
+    setTitle("HomePage");
   }, [setTitle]);
 
   if (loading) return <HomePageShimmer />;
