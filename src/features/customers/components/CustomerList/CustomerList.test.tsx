@@ -50,6 +50,6 @@ describe("CustomerList", () => {
             <CustomerList customers={mockCustomers} selectedRole={UserRole.ADMIN} />
         );
         const customerCards = container.querySelectorAll("li");
-        expect(customerCards).toHaveLength(2); // 2 ADMIN Customers
+        expect(customerCards).toHaveLength(2);
     });
 });
