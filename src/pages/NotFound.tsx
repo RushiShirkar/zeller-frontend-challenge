@@ -1,6 +1,14 @@
 import { Link } from "react-router";
+import { usePageTitle } from "../context/PageTitleContext";
+import { useEffect } from "react";
 
 const NotFound = () => {
+  const { setTitle } = usePageTitle();
+
+  useEffect(() => {
+    setTitle("NotFound");
+  }, [setTitle]);
+
   return (
     <main className="grid min-h-[660px] place-items-center bg-white px-6 lg:px-8">
       <div className="text-center">
